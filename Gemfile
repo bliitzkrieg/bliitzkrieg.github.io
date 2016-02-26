@@ -2,6 +2,7 @@ source "http://rubygems.org"
 
 gem 'jekyll'
 gem 'redcarpet'
+gem 'rouge'
 gem 'classifier-reborn'
 
 # jekyll plugins
