@@ -8,8 +8,6 @@
 $ gulp [--prod]
 ```
 
-`--prod`.
-
 ## Usage
 
 ```sh
