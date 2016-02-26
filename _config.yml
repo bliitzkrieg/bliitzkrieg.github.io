@@ -35,8 +35,8 @@ paginate_path: 'page:num'
 excerpt_separator: '<!--more-->'
 
 # Markdown library and options
-markdown: redcarpet
-redcarpet:
+markdown: kramdown
+kramdown:
   extensions: ['no_intra_emphasis', 'tables', 'fenced_code_blocks', 'autolink', 'smart',
               'strikethrough', 'superscript', 'underline', 'highlight', 'footnotes']
 highlighter: rouge
