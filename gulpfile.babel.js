@@ -187,7 +187,7 @@ gulp.task('html', () =>
 // 'gulp deploy' -- pushes your dist folder to Github
 gulp.task('deploy', () => {
   return gulp.src('dist/**/*')
-    .pipe($.ghPages());
+    .pipe($.ghPages({branch: 'master'}));
 });
 
 // 'gulp lint' -- check your JS for formatting errors using XO Space
