@@ -236,6 +236,12 @@ gulp.task('assets:copy', () =>
     .pipe(gulp.dest('dist/assets'))
 );
 
+// 'gulp copy:cname' -- Copies CNAME file to dist for deployment for gh_pages to pick up and register.
+gulp.task('copy:cname', () =>
+  gulp.src('src/CNAME')
+    .pipe(gulp.dest('dist'))
+);
+
 // 'gulp' -- cleans your assets and gzipped files, creates your assets and
 // injects them into the templates, then builds your site, copied the assets
 // into their directory and serves the site
@@ -252,7 +258,7 @@ gulp.task('default', gulp.series(
 gulp.task('build', gulp.series(
   gulp.series('clean:assets', 'clean:gzip'),
   gulp.series('assets', 'inject:head', 'inject:footer'),
-  gulp.series('jekyll', 'assets:copy', 'html')
+  gulp.series('jekyll', 'assets:copy', 'copy:cname', 'html')
 ));
 
 // 'gulp clean' -- erases your assets and gzipped files
