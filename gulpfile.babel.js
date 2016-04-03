@@ -139,7 +139,7 @@ gulp.task('inject:head', () =>
 
 // 'gulp inject:footer' -- injects our index.js file into the end of our HTML
 gulp.task('inject:footer', () =>
-  gulp.src('src/_layouts/default.html')
+  gulp.src(['src/_layouts/default.html', 'src/_layouts/home.html'])
     .pipe($.inject(gulp.src('.tmp/assets/javascript/*.js',
                             {read: false}), {ignorePath: '.tmp'}))
     .pipe(gulp.dest('src/_layouts'))
