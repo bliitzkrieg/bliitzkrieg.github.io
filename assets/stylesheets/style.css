@@ -449,4 +449,34 @@ pre {
   .highlight .il {
     color: #099; }
 
+.home-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #E8E8E8;
+  padding: 60px 0 60px 0; }
+
+.home-header-details {
+  margin-right: 50px;
+  max-width: 350px; }
+
+.home-header-details-name {
+  font-size: 40px;
+  font-weight: 100; }
+
+.home-header-details-roles {
+  padding: 10px 0; }
+
+.header-home-details-content {
+  padding-top: 10px; }
+
+.home-header-image img {
+  height: 200px; }
+
+.skinny-line {
+  height: 1px;
+  width: 100%;
+  background: #D4D4D4; }
+
 /*# sourceMappingURL=style.css.map */
