@@ -5,10 +5,10 @@
   flex-wrap: wrap;
   background: #E8E8E8;
   padding: 60px 0 60px 0;
+  overflow: hidden;
 }
 
 .home-header-details {
-  margin-right: 50px;
   max-width: 350px;
   font-size: 15px;
 }
@@ -39,9 +39,10 @@
 }
 
 .home-header-image {
+  margin-bottom: -60px;
   img {
     border-radius: 5px;
-    height: 200px;
+    height: 460px;
   }
 }
 
