@@ -67,7 +67,7 @@ gulp.task('styles', () =>
       precision: 10
     }).on('error', $.sass.logError))
     .pipe($.postcss([
-      autoprefixer({browsers: 'last 1 version'})
+      autoprefixer({browsers: 'last 3 version'})
     ]))
     .pipe($.size({
       title: 'styles',
@@ -156,6 +156,16 @@ gulp.task('images', () =>
     .pipe($.size({title: 'images'}))
 );
 
+gulp.task('favicon', () =>
+  gulp.src('src/assets/**.png')
+    .pipe($.cache($.imagemin({
+      progressive: true,
+      interlaced: true
+    })))
+    .pipe(gulp.dest('.tmp/assets'))
+    .pipe($.size({title: 'favicon'}))
+);
+
 // 'gulp fonts' -- copies your fonts to the temporary assets folder
 gulp.task('fonts', () =>
   gulp.src('src/assets/fonts/**/*')
@@ -226,7 +236,7 @@ gulp.task('serve', () => {
 // production settings
 gulp.task('assets', gulp.series(
   gulp.series('clean:assets'),
-  gulp.parallel('styles', 'scripts', 'fonts', 'images')
+  gulp.parallel('styles', 'scripts', 'fonts', 'images', 'favicon')
 ));
 
 // 'gulp assets:copy' -- copies the assets into the dist folder, needs to be
