@@ -11,6 +11,7 @@
 .home-header-details {
   max-width: 350px;
   font-size: 15px;
+  margin-left: 59px;
 }
 
 .home-header-details-name {
@@ -24,6 +25,12 @@
 
 .header-home-details-content {
   padding-top: 10px;
+  > .header-home-details-block {
+    margin-top: 10px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
 }
 
 .home-header-details-social {
@@ -33,7 +40,7 @@
     margin: 0 3px;
     &:hover {
       text-decoration: none;
-      i { animation: shake 0.4s cubic-bezier(.36,.07,.19,.97); }
+      i { animation: zoom 0.2s cubic-bezier(.36,.07,.19,.97); }
     }
   }
 }
@@ -56,22 +63,10 @@
   font-size: 12px;
 }
 
-@keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
-  }
+@keyframes zoom {
+   50% {
+     transform: scale(1.2);
+   }
 }
 
 @include media-query(600px) {
@@ -81,8 +76,8 @@
     padding-bottom: 30px;
   }
   .home-header-details {
-    margin-right: 0;
     width: 100%;
+    margin: 0;
   }
   .home-header-image {
     width: 100%;
