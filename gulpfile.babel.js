@@ -42,10 +42,10 @@ gulp.task('clean:metadata', () => {
 // 'gulp jekyll --prod' -- builds your site with production settings
 gulp.task('jekyll', done => {
   if (!argv.prod) {
-    shell.exec('jekyll build');
+    shell.exec('bundle exec jekyll build');
     done();
   } else if (argv.prod) {
-    shell.exec('jekyll build --config _config.yml,_config.build.yml');
+    shell.exec('bundle exec jekyll build --config _config.yml,_config.build.yml');
     done();
   }
 });
